@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<link href="/css/style.css" rel="stylesheet">
+<script type="text/javascript" th:src="@{/js/style.js}"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Create Accounts</title>
+
+
+</head>
+
+<!--The nav bar-->
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/indexSiteAdministrator">
+      <img src="/images/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      E-Parking Solution
+    </a>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link" href="/indexSiteAdministrator" style="color: darkgrey">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+          </svg>
+          Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/viewAccounts" style="color: darkgrey">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+            <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+          </svg>
+          View accounts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/createAccounts" style="color: white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
+            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+            <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
+          </svg>
+          Create accounts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/siteAdministratorStatistics" style="color: darkgrey">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-line" viewBox="0 0 16 16">
+            <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"/>
+          </svg>
+          Statistics</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout" style="color: darkgrey">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
+            <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
+            <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z"/>
+          </svg>
+          Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<body style="Background-color:#8dd5d862"><br>
+
+
+<div th:if="${successMessage}" class="alert alert-success alert-dismissible text-center mx-auto" role="alert" style="max-width: 400px;">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <p th:text="${successMessage}"></p>
+</div>
+
+<div th:if="${usernameTakenMessage}" class="alert alert-danger alert-dismissible text-center mx-auto" role="alert" style="max-width: 400px;">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <p th:text="${usernameTakenMessage}"></p>
+</div>
+
+
+<div class="my-site-create-account-form container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+          <h2 class="text-center mb-0">Create Account for Parking Owners</h2>
+        </div>
+        <div class="card-body">
+          <form action="/createAccounts" method="post">
+            <div style="text-align: center;font-size: 20px ;font-family: 'Academy Engraved LET' ;color: red; text-align: center" th:if="${emptyUser}" th:text="${emptyUser}"/>
+
+            <div style="text-align: center;font-size: 20px ;font-family: 'Academy Engraved LET' ;color: red; text-align: center" th:if="${errorTaken}" th:text="${errorTaken}"/>
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
+            </div>
+            <div style="text-align: center;font-size: 20px ;font-family: 'Academy Engraved LET' ;color: red; text-align: center" th:if="${emptyPassword}" th:text="${emptyPassword}"/>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+            </div>
+            <div style="text-align: center;font-size: 20px ;font-family: 'Academy Engraved LET' ;color: red; text-align: center" th:if="${emptyAddress}" th:text="${emptyAddress}"/>
+            <div class="form-group">
+              <label for="address">Address:</label>
+              <input type="text" class="form-control" id="address" name="address" placeholder="Enter address" required>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="terms" required>
+              <label class="form-check-label" for="terms">I agree to the
+                <a href="#" data-toggle="modal" data-target="#termsModal">terms and conditions</a>
+              </label>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary px-5">Create Account</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+        <button type="button" class="close"  data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        By using our website, you agree to be bound by these terms and conditions. If you do not agree, please do not use our website.
+
+        Our website is for general information purposes only and may be subject to change without notice. We use cookies to monitor browsing preferences.
+
+        We provide no warranty or guarantee for the accuracy, timeliness, performance, completeness or suitability of the information and materials found on this website. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors.
+
+        You use our website at your own risk. It is your responsibility to ensure that any products, services or information available through our website meet your specific requirements.
+
+        The design, layout, look, appearance and graphics of our website are owned by us or licensed to us. Unauthorized reproduction is prohibited.
+
+        All trademarks reproduced in our website, which are not the property of or licensed to us, are acknowledged on the website.
+
+        We may include links to other websites for your convenience, but we have no responsibility for the content of those websites.
+
+        Your use of our website and any dispute arising from it is subject to the laws of the United Kingdom.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Include jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+body {
+    font-size: 12px;
+    font-family: sans-serif;
+    background: lightblue;
+}
+
+
+p {
+    width: 100%;
+    text-align: center;
+    color: #3498db;
+    font-family: 'Cherry Swash',cursive;
+    font-size: 16px;
+}
+
+
+
+p1 {
+    width: 100%;
+    text-align: left;
+    color: #3498db;
+    font-family: 'Cherry Swash',cursive;
+    font-size: 16px;
+}
+.header {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+
+/** Booking checkout **/
+.payment-form {
+    width: 500px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.payment-form label {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.payment-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+}
+
+.payment-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #337ab7;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.payment-form input[type="submit"]:hover {
+    background-color: #286090;
+}
+
+.payment-details {
+    width: 500px;
+    margin: 50px auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+.payment-details span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.payment-details p {
+    margin-bottom: 20px;
+}
+
+.book-button {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 10px 20px;
+}
+
+/** Display Receipt Page **/
+.receipt {
+    background-color: lightgray;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 500px;
+    margin: 50px auto;
+}
+.receipt p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+.receipt h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/** Error payment page **/
+.error-container {
+    width: 500px;
+    height: 300px;
+    margin: 100px auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding-top: 50px;
+}
+.try-again-button {
+    width: 150px;
+    height: 40px;
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+/** Busy times for displayPS.html **/
+/*.busy-times-container {*/
+/*    width: 80%;*/
+/*    margin: 0 auto;*/
+/*    padding: 30px;*/
+/*    background-color: #f2f2f2;*/
+/*    border-radius: 10px;*/
+/*    box-shadow: 2px 2px 5px #888888;*/
+/*}*/
+
+/*.busy-time-item {*/
+/*    margin-bottom: 30px;*/
+/*    padding: 20px;*/
+/*    background-color: #ffffff;*/
+/*    border-radius: 10px;*/
+/*    box-shadow: 2px 2px 5px #888888;*/
+/*}*/
+
+/*.busy-time-date-range {*/
+/*    font-weight: bold;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*.busy-time-details {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*}*/
+
+/*.busy-time-label {*/
+/*    font-weight: bold;*/
+/*}*/
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.parking-space-header {
+    text-align: center;
+}
+
+.busy-times-section {
+    margin-top: 50px;
+}
+
+.busy-times-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.busy-time-block {
+    width: calc(25% - 20px);
+    background-color: lightgray;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+.busy-time-date {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.busy-time-period {
+    margin-top: 20px;
+}
+
+.busy-time-start,
+.busy-time-end {
+    font-size: 14px;
+}
+.empty-state-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 80vh;*/
+}
+
+.empty-state-message {
+    background-color: #F2F2F2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.empty-state-text {
+    font-size: 18px;
+    text-align: center;
+    color: #666666;
+}
+
+
+/*Design for view bookings for the driver*/
+.custom-table {
+    background-color: #f2f2f2;
+    border-collapse: collapse;
+    font-size: 14px;
+    width: 100%;
+}
+
+.custom-table th, .custom-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.custom-table th {
+    background-color: #555;
+    color: #fff;
+}
+
+.custom-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.custom-table tbody tr:hover {
+    background-color: #ddd;
+}
+/*messages table*/
+.message-row td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+}
+.message-content {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    white-space: pre-line;
+}
+/*message display*/
+.message {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px #ccc;
+    padding: 20px;
+}
+.message h1 {
+    font-size: 28px;
+    margin-top: 0;
+}
+.message h2 {
+    font-size: 24px;
+    margin-top: 0;
+}
+.message p {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+.message .meta {
+    font-size: 14px;
+    color: #999;
+    margin-top: 10px;
+}
+
+/*Site administrator view accounts*/
+.user-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Define styles for the user list */
+.user-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Define styles for each user item */
+.user-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Define styles for the user item ID */
+.user-id {
+    font-weight: bold;
+}
+
+/* Define styles for the user item details */
+.user-details {
+    margin-top: 10px;
+    line-height: 1.4;
+}
